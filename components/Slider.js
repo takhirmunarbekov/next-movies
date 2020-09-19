@@ -19,8 +19,8 @@ const Slider = ({
       </div>
       <div className="slider__list">
         {items.map((item) => (
-          <Link href={`${link}/${item.id}`} className="slider__item">
-            <a>
+          <Link href={`${link}/${item.id}`}>
+            <a className="slider__item">
               {item[imgKey] ? (
                 <img
                   src={process.env.NEXT_PUBLIC_POSTER_IMG + item[imgKey]}

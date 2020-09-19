@@ -31,3 +31,27 @@ export const fetchPopularMovies = () =>
     .catch((err) => {
       console.log(err);
     });
+
+export const fetchRatedMovies = () =>
+  request
+    .get(`/movie/top_rated`)
+    .then((res) => res.data)
+    .catch((err) => {
+      console.log(err);
+    });
+
+export const fetchNowMovies = () =>
+  request
+    .get(`/movie/now_playing`)
+    .then((res) => res.data)
+    .catch((err) => {
+      console.log(err);
+    });
+
+export const fetchUpcomingMovies = () =>
+  request
+    .get(`/movie/upcoming`)
+    .then((res) => res.data)
+    .catch((err) => {
+      console.log(err);
+    });

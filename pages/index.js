@@ -4,10 +4,7 @@ import { fetchPopularMovies } from "../api/movies";
 import { fetchPopularTvs } from "../api/tv";
 import Slider from "../components/Slider";
 
-const Main = ({ popularTv, popular }) => {
-  const bannerData = [...popular, ...popularTv];
-  const randomData = bannerData[Math.floor(Math.random() * bannerData.length)];
-
+const Main = ({ popularTv, popular, randomData }) => {
   return (
     <div>
       <Banner data={randomData} />
@@ -23,13 +20,17 @@ const Main = ({ popularTv, popular }) => {
 };
 
 export async function getServerSideProps() {
-  const { results: popular } = await fetchPopularTvs();
-  const { results: popularTv } = await fetchPopularMovies();
+  const { results: popularTv } = await fetchPopularTvs();
+  const { results: popular } = await fetchPopularMovies();
+
+  const bannerData = [...popular, ...popularTv];
+  const randomData = bannerData[Math.floor(Math.random() * bannerData.length)];
 
   return {
     props: {
       popular,
       popularTv,
+      randomData,
     },
   };
 }
