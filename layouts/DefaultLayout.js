@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const links = [
   {
@@ -23,13 +23,15 @@ const Layout = ({ children }) => (
   <div className="layout">
     <div className="layout__side">
       {links.map((item) => (
-        <Link key={item.path} to={item.path} className="layout__side-item">
-          <span
-            className="layout__side-icon"
-            dangerouslySetInnerHTML={{
-              __html: item.icon,
-            }}
-          ></span>
+        <Link key={item.path} href={item.path} className="layout__side-item">
+          <a>
+            <span
+              className="layout__side-icon"
+              dangerouslySetInnerHTML={{
+                __html: item.icon,
+              }}
+            ></span>
+          </a>
         </Link>
       ))}
     </div>

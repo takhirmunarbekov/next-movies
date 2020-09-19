@@ -23,7 +23,7 @@ const Slider = ({
             <a>
               {item[imgKey] ? (
                 <img
-                  src={process.env.REACT_APP_POSTER_IMG + item[imgKey]}
+                  src={process.env.NEXT_PUBLIC_POSTER_IMG + item[imgKey]}
                   alt={item[titleKey]}
                 />
               ) : (

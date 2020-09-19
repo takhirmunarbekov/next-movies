@@ -10,28 +10,8 @@ import Videos from "../../components/Videos";
 
 const tabs = ["О фильме", "Трейлеры", "Галерея"];
 
-const Movie = () => {
-  const [movie, setMovie] = useState(null);
+const Movie = ({ movie }) => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
-  const { id: movieID } = useParams();
-
-  useEffect(() => {
-    const getMovieData = async () => {
-      const movie = await fetchMovie(movieID);
-      const cast = await fetchCredits(movieID);
-      const similar = await fetchSimilar(movieID);
-      const videos = await fetchMovieVideos(movieID);
-
-      setMovie({
-        data: movie || null,
-        cast: cast ? cast.cast : [],
-        similar: similar ? similar.results : [],
-        videos: videos ? videos.results : [],
-      });
-    };
-
-    getMovieData();
-  }, [movieID]);
 
   if (!movie) return null;
 
@@ -63,20 +43,20 @@ const Movie = () => {
 };
 
 export async function getServerSideProps(context) {
-  const movie = await fetchMovie(movieID);
-  const cast = await fetchCredits(movieID);
-  const similar = await fetchSimilar(movieID);
-  const videos = await fetchMovieVideos(movieID);
-
-  setMovie({
-    data: movie || null,
-    cast: cast ? cast.cast : [],
-    similar: similar ? similar.results : [],
-    videos: videos ? videos.results : [],
-  });
+  const movie = await fetchMovie(context.params.id);
+  const cast = await fetchCredits(context.params.id);
+  const similar = await fetchSimilar(context.params.id);
+  const videos = await fetchMovieVideos(context.params.id);
 
   return {
-    props: {},
+    props: {
+      movie: {
+        data: movie || null,
+        cast: cast ? cast.cast : [],
+        similar: similar ? similar.results : [],
+        videos: videos ? videos.results : [],
+      },
+    },
   };
 }
 

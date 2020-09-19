@@ -6,7 +6,7 @@ const Banner = ({ data }) =>
       <div
         className="banner__bg"
         style={{
-          backgroundImage: `url(${process.env.REACT_APP_IMG}${data.backdrop_path})`,
+          backgroundImage: `url(${process.env.NEXT_PUBLIC_IMG}${data.backdrop_path})`,
         }}
       >
         <div className="banner__inner">
