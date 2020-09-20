@@ -1,57 +1,57 @@
-import request from "./request";
+import request from './request'
 
-export const fetchMovie = (id) =>
+export const fetchMovie = id =>
   request
     .get(`/movie/${id}`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
-export const fetchSimilar = (id) =>
+export const fetchSimilar = id =>
   request
     .get(`/movie/${id}/similar`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
-export const fetchMovieVideos = (id) =>
+export const fetchMovieVideos = id =>
   request
     .get(`/movie/${id}/videos`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
 export const fetchPopularMovies = () =>
   request
-    .get(`/movie/popular`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .get('/movie/popular')
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
 export const fetchRatedMovies = () =>
   request
-    .get(`/movie/top_rated`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .get('/movie/top_rated')
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
 export const fetchNowMovies = () =>
   request
-    .get(`/movie/now_playing`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .get('/movie/now_playing')
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
 
 export const fetchUpcomingMovies = () =>
   request
-    .get(`/movie/upcoming`)
-    .then((res) => res.data)
-    .catch((err) => {
-      console.log(err);
-    });
+    .get('/movie/upcoming')
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })

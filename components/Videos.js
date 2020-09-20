@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react'
 
-const Videos = ({ items }) => <div className="videos">
-    deade
-</div>;
+const Videos = () => <div className="videos">deade</div>
 
-export default Videos;
+export default Videos

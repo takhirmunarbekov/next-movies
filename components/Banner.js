@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Banner = ({ data }) =>
   data ? (
@@ -20,6 +20,6 @@ const Banner = ({ data }) =>
         </div>
       </div>
     </div>
-  ) : null;
+  ) : null
 
-export default Banner;
+export default Banner

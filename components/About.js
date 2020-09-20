@@ -1,25 +1,12 @@
-import React from "react";
+import React from 'react'
 
-const listFields = [];
-
-const DateFormat = { day: "numeric", month: "long", year: "numeric" };
-
-// Released - release_date;
-// Runtime - runtime;
-// Director - ;
-// Genre - genres;
-// Status - status;
-// Language - original_language;
-// Production - production_companies;
+const DateFormat = { day: 'numeric', month: 'long', year: 'numeric' }
 
 const About = ({ data }) =>
   data ? (
     <div className="about">
       <div className="about__img">
-        <img
-          src={process.env.REACT_APP_POSTER_IMG + data.poster_path}
-          alt={data.title}
-        />
+        <img src={process.env.NEXT_PUBLIC_POSTER_IMG + data.poster_path} alt={data.title} />
       </div>
       <div className="about__info">
         <h2>{data.title}</h2>
@@ -29,10 +16,7 @@ const About = ({ data }) =>
           <li>
             <div className="about-list__name">Дата выхода</div>
             <div className="about-list__value">
-              {new Date(data.release_date).toLocaleDateString(
-                "ru-RU",
-                DateFormat
-              )}
+              {new Date(data.release_date).toLocaleDateString('ru-RU', DateFormat)}
             </div>
           </li>
           <li>
@@ -40,8 +24,7 @@ const About = ({ data }) =>
             <div className="about-list__value">
               {data.genres.map((genre, key) => (
                 <>
-                  <span>{genre.name}</span>{" "}
-                  {key + 1 !== data.genres.length ? " , " : null}
+                  <span>{genre.name}</span> {key + 1 !== data.genres.length ? ' , ' : null}
                 </>
               ))}
             </div>
@@ -61,6 +44,6 @@ const About = ({ data }) =>
         </ul>
       </div>
     </div>
-  ) : null;
+  ) : null
 
-export default About;
+export default About
