@@ -55,14 +55,5 @@
         "function-paren-newline": "off",
         "implicit-arrow-linebreak": "off",
         "operator-linebreak": "off"
-    },
-    "settings": {
-        "import/resolver": {
-            "alias": {
-                "map": [
-                    ["@", "./"]
-                ]
-            }
-        }
     }
 }

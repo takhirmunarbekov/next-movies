@@ -4,15 +4,13 @@ import { fetchPopularMovies } from '../api/movies'
 import { fetchPopularTvs } from '../api/tv'
 import Slider from '../components/Slider'
 
-const Main = ({ popularTv, popular, randomData }) => {
-  return (
-    <div>
-      <Banner data={randomData} />
-      <Slider title="Популярные фильмы" items={popular} />
-      <Slider title="Популярные сериалы" items={popularTv} titleKey="name" link="/tv" />
-    </div>
-  )
-}
+const Main = ({ popularTv, popular, randomData }) => (
+  <div>
+    <Banner data={randomData} />
+    <Slider title="Популярные фильмы" items={popular} />
+    <Slider title="Популярные сериалы" items={popularTv} titleKey="name" link="/tv" />
+  </div>
+)
 
 export async function getServerSideProps() {
   const { results: popularTv } = await fetchPopularTvs()
