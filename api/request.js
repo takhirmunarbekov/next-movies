@@ -7,7 +7,7 @@ const request = axios.create({
   headers: {},
   params: {
     api_key: API_KEY,
-    language: 'ru-RU',
+    // language: 'ru-RU',
   },
 })
 

@@ -14,6 +14,8 @@ const Movie = ({ movie }) => {
 
   if (!movie) return null
 
+  console.log(movie.videos)
+
   return (
     <div className="movie">
       <Banner data={movie.data} />
@@ -32,7 +34,7 @@ const Movie = ({ movie }) => {
         )}
         {activeTab === 'Трейлеры' && (
           <>
-            <Videos />
+            <Videos videos={movie.videos} />
           </>
         )}
       </div>
