@@ -14,7 +14,7 @@ const Modal = ({ items = [], type = 'image', isOpen, currentItem, close }) => {
   return isOpen ? (
     <div className="modal">
       <div className="modal__bg" onClick={close} />
-      <div className="modal__close">
+      <div className="modal__close" onClick={close}>
         <img src="/close.svg" alt="" />
       </div>
       <div className="modal__inner">
