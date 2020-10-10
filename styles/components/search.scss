@@ -1,0 +1,28 @@
+.search {
+  position: fixed;
+  width: 100%;
+  background-color: $dark;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  top: -74px;
+  transition: all 0.3s ease-in-out;
+
+  &__active {
+    top: 0;
+  }
+
+  &__form {
+    padding: 0 24px;
+    width: 100%;
+
+    input {
+      width: 100%;
+      font-size: 18px;
+      color: $white;
+      background-color: $dark;
+      outline: none;
+      border: none;
+    }
+  }
+}
