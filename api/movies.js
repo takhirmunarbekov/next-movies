@@ -24,6 +24,14 @@ export const fetchMovieVideos = id =>
       console.log(err)
     })
 
+export const fetchMovieImages = id =>
+  request
+    .get(`/movie/${id}/images`)
+    .then(res => res.data)
+    .catch(err => {
+      console.log(err)
+    })
+
 export const fetchPopularMovies = () =>
   request
     .get('/movie/popular')

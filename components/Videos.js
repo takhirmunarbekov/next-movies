@@ -6,6 +6,7 @@ const Videos = ({ videos = [] }) => {
   const [currentItem, setCurrentItem] = useState(0)
 
   const openModal = key => {
+    console.log(key)
     setCurrentItem(key)
     setIsOpen(true)
   }
@@ -27,6 +28,7 @@ const Videos = ({ videos = [] }) => {
       <Modal
         isOpen={isOpen}
         currentItem={currentItem}
+        setCurrentItem={setCurrentItem}
         close={closeModal}
         items={videos}
         type="video"

@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const YOUTUBE_LINK = 'https://www.youtube.com/embed/'
 
-const Modal = ({ items = [], type = 'image', isOpen, currentItem, close }) => {
-  const [activeItem, setActiveItem] = useState(currentItem || 0)
-
+const Modal = ({ items = [], type = 'image', isOpen, currentItem, setCurrentItem, close }) => {
   const changeItem = step => {
-    if (step + activeItem >= 0 && step + activeItem < items.length) {
-      setActiveItem(step + setActiveItem)
+    if (step + currentItem >= 0 && step + currentItem < items.length) {
+      setCurrentItem(step + currentItem)
     }
   }
 
@@ -22,11 +20,11 @@ const Modal = ({ items = [], type = 'image', isOpen, currentItem, close }) => {
           <img src="/arrow-left.svg" alt="" />
         </button>
         <div className="modal__content">
-          {type === 'image' ? <img src={items[activeItem]} alt="" /> : null}
+          {type === 'image' ? <img src={items[currentItem]} alt="" /> : null}
           {type === 'video' ? (
             <iframe
-              title={items[activeItem].key}
-              src={`${YOUTUBE_LINK + items[activeItem].key}?rel=0&showinfo=0&autoplay=1`}
+              title={items[currentItem].key}
+              src={`${YOUTUBE_LINK + items[currentItem].key}?rel=0&showinfo=0&autoplay=1`}
               allowFullScreen="allowfullscreen"
               allow="autoplay; encrypted-media"
               frameBorder="0"
