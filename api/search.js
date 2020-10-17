@@ -2,7 +2,7 @@ import request from './request'
 
 export default async function searchMulti(query) {
   return request
-    .get('/search/multi', {
+    .get('/search/movie', {
       params: {
         query,
       },
